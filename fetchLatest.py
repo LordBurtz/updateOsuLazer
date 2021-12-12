@@ -16,7 +16,7 @@ with open('current_version.xbash', 'r') as file:
     version = file.read()
 
 if version != json_data['tag_name']:
-    print(subprocess.run([SCRIPT, json_data['tag_name']], capture_output=True))
+    print(subprocess.run(['bash', SCRIPT, json_data['tag_name']], capture_output=True))
     with open('current_version.xbash', 'w') as f:
         f.write(version)
 print('osu!Lazer updated successfully')
