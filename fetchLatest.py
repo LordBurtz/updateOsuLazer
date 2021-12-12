@@ -15,8 +15,8 @@ json_data = response.json() if response and response.status_code == 200 else sys
 with open('current_version.xbash', 'r') as file:
     version = file.read()
 
-if version != response['tag_name']:
-    print(subprocess.run([SCRIPT, response['tag_name']], capture_output=True))
+if version != json_data['tag_name']:
+    print(subprocess.run([SCRIPT, json_data['tag_name']], capture_output=True))
     with open('current_version.xbash', 'w') as f:
         f.write(version)
 print('osu!Lazer updated successfully')
