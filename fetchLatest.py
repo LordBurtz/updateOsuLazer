@@ -8,7 +8,9 @@ import subprocess
 SCRIPT='/home/fridolin/bin/updateOsuLazer/updateOsu.sh'
 url = 'https://api.github.com/repos/ppy/osu/releases/latest'
 
-respone = json.loads(requests.get(url))
+respone = requests.get(url)
+
+json_data = respone.json() if response and response.status_code == 200 else sys.exit('Internet connection be misbehaving")
 
 with open('current_version.xbash', 'rw') as f:
     version = file.read()
