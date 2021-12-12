@@ -2,6 +2,8 @@
 
 GAME_DIR="/home/$USER/Games"
 
+DESK_ENTR_URL="https://raw.githubusercontent.com/LordBurtz/updateOsuLazer/master/osu.desktop"
+
 #cleaning dir
 find -type f -name '*osu*' -delete || echo " "
 
@@ -12,6 +14,9 @@ find $GAME_DIR -type f -name '*osu*AppImage*' -delete  || echo "first install in
 mv "osu-$1.AppImage" $GAME_DIR
 
 #updating desktop entry
-deskEntryDir="/home/$USER/.loal/share/appliactions"
-
-
+deskEntryDir="/home/$USER/.local/share/applications"
+if [[ -f "$deskEntryDir/osu.desktop" ]]; then
+	sed -i "s/osu.*AppImage/osu-$1.AppImage/g" "$deskEntryDir/osu"*".desktop"
+else
+	wget --output-document "$deskEntryDir/osu.desktop" $DESK_ENTR_URL
+fi
