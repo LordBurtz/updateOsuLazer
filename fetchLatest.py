@@ -14,7 +14,7 @@ with open('current_version.xbash', 'rw') as f:
     version = file.read()
 
 if version != response['tag_name']:
-    print(subprocess.run([SCRIPT, response['tag_name'], capture_output=True))
+    print(subprocess.run([SCRIPT, response['tag_name']], capture_output=True))
     with open('current_version.xbash', 'w') as f:
         f.write(version)
 print('osu!Lazer updated successfully')
