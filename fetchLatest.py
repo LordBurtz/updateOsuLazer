@@ -5,7 +5,7 @@ import json
 import sys
 import subprocess
 
-SCRIPT='~/bin/updateOsuLazer/updateOsu.sh'
+SCRIPT='/home/fridolin/bin/updateOsuLazer/updateOsu.sh'
 url = 'https://api.github.com/repos/ppy/osu/releases/latest'
 
 response = requests.get(url)
