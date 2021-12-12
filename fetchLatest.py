@@ -12,7 +12,7 @@ response = requests.get(url)
 
 json_data = response.json() if response and response.status_code == 200 else sys.exit('Internet connection be misbehaving')
 
-with open('current_version.xbash', 'r') as f:
+with open('current_version.xbash', 'r') as file:
     version = file.read()
 
 if version != response['tag_name']:
