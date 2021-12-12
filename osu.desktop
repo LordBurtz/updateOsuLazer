@@ -1,0 +1,11 @@
+[Desktop Entry]
+
+Type=Application
+Version=1.0
+Name=osu lazer
+Comment=Click the circles!
+Path=~
+Exec=/home/fridolin/Games/osu.AppImage
+Icon=osu-icon.png
+Terminal=false
+Categories=Games;Education;Languages;
